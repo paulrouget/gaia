@@ -37,12 +37,14 @@
 	opacity: 0;
 }
 
-@-moz-keyframes shake {
-  0% { -moz-transform: scale(1); }
-	25% { -moz-transform: scale(1.05); }
-  50% { -moz-transform: scale(1); }
-  75% { -moz-transform: scale(0.95); }
-	100% { -moz-transform: scale(1); }
+@keyframes shake {
+  /* Adding a rotate value improves the smoothness of the animation.
+     See: https://bugzilla.mozilla.org/show_bug.cgi?id=663776 */
+    0% { transform: scale(1)    rotate(0.01);}
+   25% { transform: scale(1.05) rotate(0.01);}
+   50% { transform: scale(1)    rotate(0.01);}
+   75% { transform: scale(0.95) rotate(0.01);}
+  100% { transform: scale(1)    rotate(0.01);}
 }
 
 @-moz-keyframes none {}
